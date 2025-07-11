@@ -1,3 +1,6 @@
+html,body{height:100%;margin:0;overflow:hidden}
+.home-container{overflow:hidden}
+
 .home-container {
   min-height: 100vh;
   display: flex;
@@ -105,6 +108,12 @@
     width: 100%;
   }
 }
+
+@keyframes lineFade{from{opacity:0}to{opacity:1}}
+@keyframes lineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes lineGrowV{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes lineGrow45{from{transform:rotate(45deg) scaleX(0)}to{transform:rotate(45deg) scaleX(1)}}
+@keyframes lineGrowN45{from{transform:rotate(-45deg) scaleX(0)}to{transform:rotate(-45deg) scaleX(1)}}
 
 .theme-toggle {
   position: absolute;
@@ -322,3 +331,11 @@
     background-color: black;
   }
 }
+
+.game-info{margin-top:20px;font-size:1.2rem;color:inherit;text-align:center;min-height:1.2em;width:120px;display:inline-block}
+.reset-button{margin-top:10px;padding:8px 16px;background:#888;color:#fff;border:none;border-radius:4px;cursor:pointer}
+.reset-button:hover{opacity:.8}
+
+.cell.fall{animation:fallDown 3s forwards cubic-bezier(.25,.8,.5,1)}
+@keyframes fallDown{to{transform:translateY(120vh) rotate(25deg);opacity:0}}
+.win-line{pointer-events:none}
